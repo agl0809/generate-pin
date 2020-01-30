@@ -12,7 +12,11 @@ describe('filling a pin collection', () => {
   });
 });
 
-describe('generating a pin', () => {
+describe('generating pins', () => {
+  test('should return strings', () => {
+    expect(typeof generatePin()[0]).toEqual('string');
+  });
+
   test('should have four digits', () => {
     const pinLength = 4;
 
