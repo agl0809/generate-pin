@@ -1,4 +1,4 @@
-import { generatePin } from './index';
+import { generatePin } from '../index';
 
 describe('filling a pin collection', () => {
   test('should return one pin by default', () => {
