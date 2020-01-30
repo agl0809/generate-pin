@@ -1,11 +1,21 @@
 import { generatePin } from './index';
 
-test('should return one-pin list by default', () => {
-  expect(generatePin().length).toEqual(1);
+describe('filling a pin collection', () => {
+  test('should return one pin by default', () => {
+    expect(generatePin().length).toEqual(1);
+  });
+
+  test('should return a certain number of pins', () => {
+    const size = 5;
+
+    expect(generatePin(size).length).toEqual(size);
+  });
 });
 
-test('should return a list of pins with a certain size', () => {
-  const size = 5;
+describe('generating a pin', () => {
+  test('should have four digits', () => {
+    const pinLength = 4;
 
-  expect(generatePin(size).length).toEqual(size);
+    expect(generatePin()[0].length).toEqual(pinLength);
+  });
 });
