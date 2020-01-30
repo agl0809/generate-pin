@@ -1,0 +1,34 @@
+{
+  "name": "generate-pin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agl0809/generate-pin.git"
+  },
+  "keywords": [
+    "es6",
+    "yypescript",
+    "jest",
+    "conventional-changelog"
+  ],
+  "author": "Antonio Garcia, agl0809@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agl0809/generate-pin/issues"
+  },
+  "homepage": "https://github.com/agl0809/generate-pin#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.1.0",
+    "typescript": "^3.7.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
