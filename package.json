@@ -1,6 +1,6 @@
 {
   "name": "generate-pin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unique and random pins generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
