@@ -1,7 +1,7 @@
 {
   "name": "generate-pin",
   "version": "1.0.1",
-  "description": "Unique and random pins generator",
+  "description": "Random Pins generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -23,12 +23,11 @@
     "url": "git+https://github.com/agl0809/generate-pin.git"
   },
   "keywords": [
-    "es6",
+    "ES2017",
     "typescript",
     "jest",
     "tslint",
-    "prettier",
-    "conventional-changelog"
+    "prettier"
   ],
   "author": "Antonio Garcia, agl0809@gmail.com",
   "license": "ISC",

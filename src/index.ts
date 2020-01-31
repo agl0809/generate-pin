@@ -24,12 +24,14 @@ const getRandomPin = (): string => {
   return randomPin.substring(randomPin.indexOf('.') + 1);
 };
 
-const getValidPin = (): string => {
+const getValidPin = (pins: string[]): string => {
   const pin = getRandomPin();
   const digits = pinToDigits(pin);
 
-  return hasSameNeigbors(digits) || hasThreeDigitsOrdered(digits)
-    ? getValidPin()
+  return hasSameNeigbors(digits) ||
+    hasThreeDigitsOrdered(digits) ||
+    pins.includes(pin)
+    ? getValidPin(pins)
     : digits.join('');
 };
 
@@ -37,7 +39,7 @@ export const getPins = (size: number = 1): string[] => {
   const pins: string[] = [];
 
   while (pins.length < size) {
-    pins.push(getValidPin());
+    pins.push(getValidPin(pins));
   }
 
   return pins;

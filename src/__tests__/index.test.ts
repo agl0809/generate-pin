@@ -44,6 +44,13 @@ describe('generate-pin', () => {
       expect(hasThreeDigitsOrdered(digits)).toBeFalsy();
     });
   });
+
+  test('should return pins different from each others', () => {
+    const size = 5;
+    const pins = getPins(size);
+
+    expect([...new Set(pins)].length).toEqual(size);
+  });
 });
 
 const hasSameNeigbors = (pin: number[]): boolean => {
