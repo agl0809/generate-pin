@@ -6,13 +6,31 @@ const getRandomPin = (): string => {
   return randomPin.substring(randomPin.indexOf('.') + 1);
 };
 
-export const generatePin = (size: number = 1): string[] => {
-  const pinCollection: string[] = [];
+const pinToDigits = (pin: string): number[] =>
+  pin.split('').map((elem: string) => parseInt(elem, 10));
 
-  while (pinCollection.length < size) {
-    const newPin = getRandomPin();
-    pinCollection.push(newPin);
+const hasSameNeigbors = (pin: number[]): boolean => {
+  for (let i = 0; i < pin.length - 1; i++) {
+    if (pin[i] === pin[i + 1]) {
+      return true;
+    }
+  }
+  return false;
+};
+
+const getValidPin = (): string => {
+  const pin = getRandomPin();
+  const digits = pinToDigits(pin);
+
+  return hasSameNeigbors(digits) ? getValidPin() : digits.join('');
+};
+
+export const getPins = (size: number = 1): string[] => {
+  const pins: string[] = [];
+
+  while (pins.length < size) {
+    pins.push(getValidPin());
   }
 
-  return pinCollection;
+  return pins;
 };
