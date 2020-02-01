@@ -35,7 +35,7 @@ const getValidPin = (pins: string[]): string => {
     : digits.join('');
 };
 
-export default (size: number = 1): string[] => {
+export const generatePin = (size: number = 1): string[] => {
   const pins: string[] = [];
 
   while (pins.length < size) {

@@ -1,4 +1,4 @@
-import generatePin from '../index';
+import { generatePin } from '../index';
 
 describe('generate-pin', () => {
   test('should return one pin by default', () => {

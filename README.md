@@ -11,11 +11,11 @@ A PIN doesn't contain 3 or more consecutive ascending or descending digits
 A PIN doesn't have 2 same consecutive digits
 
 ```javascript
-import { getPins } from 'generate-pin';
+const generatePin = require('generate-pin');
 
-getPins();
+generatePin();
 // output: ["0245"]
 
-getPins(3);
+generatePin(3);
 // output: ["0245", "6298", "4910"]
 ```
