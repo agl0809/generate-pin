@@ -7,7 +7,7 @@ const isOrdered = (segment: number[]): boolean =>
 const hasThreeDigitsOrdered = (pin: number[]): boolean =>
   isOrdered(pin.slice(0, 3)) || isOrdered(pin.slice(1));
 
-const hasSameNeigbors = (pin: number[]): boolean => {
+const hasSameNeighbors = (pin: number[]): boolean => {
   for (let i = 0; i < pin.length - 1; i++) {
     if (pin[i] === pin[i + 1]) {
       return true;
@@ -28,14 +28,14 @@ const getValidPin = (pins: string[]): string => {
   const pin = getRandomPin();
   const digits = pinToDigits(pin);
 
-  return hasSameNeigbors(digits) ||
+  return hasSameNeighbors(digits) ||
     hasThreeDigitsOrdered(digits) ||
     pins.includes(pin)
     ? getValidPin(pins)
     : digits.join('');
 };
 
-export const getPins = (size: number = 1): string[] => {
+export default (size: number = 1): string[] => {
   const pins: string[] = [];
 
   while (pins.length < size) {
